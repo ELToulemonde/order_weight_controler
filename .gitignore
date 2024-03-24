@@ -1,0 +1,8 @@
+# Project related
+data/*
+!data/__init__.py
+!data/prodcuts_weights.csv
+
+# IDE related
+.idea
+__pycahce
