@@ -31,7 +31,7 @@ def manual_process(order):
 
 
 def load_theoretical_weights() -> pd.DataFrame:
-    return pd.read_csv(join(DATA_PATH, 'prodcuts_weights.csv'))
+    return pd.read_csv(join(DATA_PATH, 'products_weights.csv'))
 
 
 def get_weight(order_id):

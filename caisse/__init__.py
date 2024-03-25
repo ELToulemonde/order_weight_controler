@@ -9,7 +9,7 @@ from data import DATA_PATH, ORDERS_FILE
 
 
 def new_order() -> dict:
-    products = pd.read_csv(join(DATA_PATH, 'prodcuts_weights.csv'), usecols=['product_id', 'product_name'])
+    products = pd.read_csv(join(DATA_PATH, 'products_weights.csv'), usecols=['product_id', 'product_name'])
     number_of_products = random.randint(1, 5)
     selected_products = random.choices(products["product_id"].tolist(), k=number_of_products)
     selected_quantities = random.choices(range(0, 5), k=number_of_products)
