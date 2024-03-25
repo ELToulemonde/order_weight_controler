@@ -42,7 +42,9 @@ def get_weight(order_id):
     if len(order["content"]) == 0:
         return 0
     for elt in order['content']:
-        real_weight.append(weights.loc[elt["product_id"], "theoretical_weight"] + random.randint(-1, 1) * weights.loc[elt["product_id"], "std"])
+        unit_weight = weights.loc[elt["product_id"], "theoretical_weight"] + random.randint(-1, 1) * weights.loc[
+            elt["product_id"], "std"]
+        real_weight.append(unit_weight * elt["quantity"])
     return sum(real_weight)
 
 

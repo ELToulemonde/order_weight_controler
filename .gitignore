@@ -5,4 +5,4 @@ data/*
 
 # IDE related
 .idea
-__pycahce
+__pycache__
