@@ -1,7 +1,7 @@
 # Project related
 data/*
 !data/__init__.py
-!data/prodcuts_weights.csv
+!data/products_weights.csv
 
 # IDE related
 .idea

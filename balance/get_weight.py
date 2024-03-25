@@ -31,7 +31,7 @@ def manual_process(order):
 
 
 def load_theoretical_weights() -> pd.DataFrame:
-    return pd.read_csv(join(DATA_PATH, 'prodcuts_weights.csv'))
+    return pd.read_csv(join(DATA_PATH, 'products_weights.csv'))
 
 
 def get_weight(order_id):
@@ -42,7 +42,9 @@ def get_weight(order_id):
     if len(order["content"]) == 0:
         return 0
     for elt in order['content']:
-        real_weight.append(weights.loc[elt["product_id"], "theoretical_weight"] + random.randint(-1, 1) * weights.loc[elt["product_id"], "std"])
+        weight_unit = (weights.loc[elt["product_id"], "theoretical_weight"] + random.randint(-1, 1) * weights.loc[
+            elt["product_id"], "std"])
+        real_weight.append(weight_unit * elt["quantity"])
     return sum(real_weight)
 
 
