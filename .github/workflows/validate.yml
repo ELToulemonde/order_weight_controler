@@ -22,6 +22,8 @@ jobs :
       run : safety check -r requirements.txt
     - name : validate bandit
       run : bandit .
+    - name : validate no dead code
+      run : vulture . --min-confidence 80
     - name : install dependecies
       run : pip install -r requirements.txt
     - name : run test
