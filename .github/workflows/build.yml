@@ -30,3 +30,5 @@ jobs:
     - name: validate security bandit
       run: bandit .
 
+    - name: check dead code
+      run: vulture . --min-confidence 80
