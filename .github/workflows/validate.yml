@@ -13,7 +13,10 @@ jobs :
       with:
         python-version: '3.10'
 
-    - name : install flake8
-      run : pip install flake8
+    - name : install dev dependencies
+      run : pip install flake8 safety
     - name : valide flake8
       run : flake8 .
+    - name : validate safety
+      run : safety check -r requirements.txt
+
