@@ -17,15 +17,15 @@ jobs:
         python-version: '3.10'
 
     - name: Install dev requirements
-      run: pip install flake8 safety pytest bandit
+      run: pip install -r requirements_dev.txt
 
-    - name: Valide Flake8
+    - name: validate Flake8
       run: flake8 .
-    - name: validade security
+    - name: validate security
       run: safety check -r requirements.txt
     - name: install dependencies
       run: pip install -r requirements.txt
-    - name: validade test
+    - name: validate test
       run: python -m pytest tests
     - name: validate security bandit
       run: bandit .
