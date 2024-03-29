@@ -21,7 +21,6 @@ def get_employee_list():
     return requests.get("http://0.0.0.0:8000/employee/list").json()
 
 
-
 # Fonction pour obtenir la liste des produits depuis l'API
 def get_product_list():
     response = requests.get("http://0.0.0.0:8000/product/list")
