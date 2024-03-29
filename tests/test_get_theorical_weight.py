@@ -2,6 +2,7 @@ from unittest.mock import patch
 
 from weight_controler_api.get_theorical_weight import get_theorical_weight
 
+
 @patch("weight_controler_api.get_theorical_weight.load_order")
 def test_get_theorical_weight(mock_load_order):
     # given
