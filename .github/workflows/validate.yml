@@ -14,9 +14,11 @@ jobs :
         python-version: '3.10'
 
     - name : install dev dependencies
-      run : pip install flake8 safety
+      run : pip install flake8 safety bandit
+
     - name : valide flake8
       run : flake8 .
     - name : validate safety
       run : safety check -r requirements.txt
-
+    - name : validate bandit
+      run : bandit .
