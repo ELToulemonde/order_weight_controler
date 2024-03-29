@@ -21,4 +21,4 @@ class Test(TestCase):
         result_weight = get_theorical_weight(order_id=given_order_id)
         # then
         self.assertEqual(expected_weight, result_weight)
-        mock_load_order.assert_called_once_with(order_id = given_order_id)
+        mock_load_order.assert_called_once_with(order_id=given_order_id)
