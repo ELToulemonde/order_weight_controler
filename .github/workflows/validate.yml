@@ -22,6 +22,7 @@ jobs :
       run : safety check -r requirements.txt
     - name : validate bandit
       run : bandit .
-
+    - name : install dependecies
+      run : pip install -r requirements.txt
     - name : run test
       run : python -m pytest tests
