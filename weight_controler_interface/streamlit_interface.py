@@ -3,6 +3,7 @@ import streamlit as st
 
 from weight_controler_api.command_status import CommandStatus
 
+
 # Fonction pour faire l'appel API et retourner le résultat
 def call_api(command_id):
     url = f"http://0.0.0.0:8000/control?command_id={command_id}"
@@ -11,6 +12,7 @@ def call_api(command_id):
         return response.json()["message"]
     else:
         return "Erreur lors de la requête API"
+
 
 # Fonction pour faire l'appel API et récupérer la liste des command_ids
 def get_command_ids():
@@ -21,10 +23,11 @@ def get_command_ids():
     else:
         return []
 
+
 # Fonction pour créer une nouvelle commande
 def create_new_command():
     url = "http://0.0.0.0:8000/new_command"
-    response = requests.post(url)
+    requests.post(url)
 
 
 # Définition de l'application Streamlit
@@ -54,9 +57,9 @@ def main():
                 st.warning("Veuillez entrer un ID de commande valide")
 
     elif app_mode == "Créer une nouvelle commande":
-        if st.sidebar.button("Créer une nouvelle commande") :
-
+        if st.sidebar.button("Créer une nouvelle commande"):
             create_new_command()
+
 
 if __name__ == "__main__":
     main()

@@ -9,6 +9,7 @@ def control_order(command_id):
     theorical_weight = get_theorical_weight(order_id=command_id)
     result = abs(real_weight - theorical_weight) / theorical_weight < 0.05
     save_control(command_id, real_weight, theorical_weight, result)
-    logger.info(f"for command{command_id} the real weight is {real_weight}, the theorical weight is {theorical_weight}, "
-                f"the result is {result}")
+    logger.info(
+        f"for command{command_id} the real weight is {real_weight}, the theorical weight is {theorical_weight}, "
+        f"the result is {result}")
     return result

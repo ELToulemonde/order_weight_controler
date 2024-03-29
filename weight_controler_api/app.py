@@ -32,9 +32,11 @@ def list_commands():
     list_commands = [elt['order_id'] for elt in data]
     return list_commands
 
+
 @app.post("/new_command")
 def new_command_api():
     return new_order()
+
 
 @app.get("/list_command")
 def list_commands_api():

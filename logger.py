@@ -1,5 +1,4 @@
 import logging
-import datetime
 
 # Configuration du logger
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(module)s - %(message)s')
